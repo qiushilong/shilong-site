@@ -19,7 +19,7 @@ const Snow: FC<SnowProps> = (props) => {
 
 	useEffect(() => {
 		const bottomY = window.innerHeight - size - 20;
-		const xRange = 100+Math.random() * window.innerWidth;
+		const xRange = Math.random() * window.innerWidth;
 		setPosition({ x: xRange, y: 0 });
 
 		let timer: NodeJS.Timer;

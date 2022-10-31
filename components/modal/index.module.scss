@@ -1,9 +1,12 @@
+@import "styles/constant.scss";
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: $semi-transparent-color;
+  border-radius: $border-radius;
+  padding: $padding;
   .closeBtn {
     position: absolute;
     top: 0;

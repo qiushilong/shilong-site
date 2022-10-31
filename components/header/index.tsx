@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo} onClick={toIndex}>
-        shilong.site
+        个人网站
       </div>
 
       <nav className={styles.nav}>
