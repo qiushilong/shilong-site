@@ -1,4 +1,6 @@
-import { FC } from 'react'
+import { FC,useEffect } from 'react'
+
+import snowing from 'lib/snowing'
 
 import snowPng from './snow.png'
 
@@ -16,10 +18,14 @@ const Snowing:FC<SnowingProps> =(props)=>{
   const {number=100} = props;
 
 
+  useEffect(()=>{
+    snowing(100);
+  },[])
+
   return <div className='snowing'>
-    {
+    {/* {
       new Array(number).fill(1).map((item,index)=><Snow key={index}/>)
-    }
+    } */}
   
   </div>
 }

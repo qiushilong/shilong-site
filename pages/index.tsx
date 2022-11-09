@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <Header></Header>
-      <Bear></Bear>
+      {/* <Bear></Bear> */}
       <Snowing></Snowing>
     </div>
   );
