@@ -9,11 +9,6 @@ const routeData = [
     key: "article",
     link: "...",
   },
-  {
-    name: "喜喜哈哈",
-    key: "xixihaha",
-    link: "...",
-  },
 ] as const;
 
 export default routeData;

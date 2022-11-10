@@ -29,4 +29,12 @@ $font-color: rgb(108, 84, 84);
 			cursor: pointer;
 		}
 	}
+
+	.projectInfo2 {
+		display: flex;
+		background-color: red;
+		.project {
+			color: green;
+		}
+	}
 }
