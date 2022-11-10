@@ -8,10 +8,11 @@ class Snow {
 	public timer: NodeJS.Timer | undefined;
 	public interval: number = 10;
 	public dom: HTMLImageElement = document.createElement("img");
-	public static snowSrc = snowSvg.src;
+	// public static snowSrc = snowSvg.src;
 
 	constructor() {
 		this.init();
+		this.dom.src = snowSvg.src;
 		document.body.append(this.dom);
 	}
 
@@ -30,8 +31,6 @@ class Snow {
 		this.dom.style.position = "absolute";
 		this.dom.style.left = this.x+'px';
 		this.dom.style.top = this.y+'px';
-
-		this.dom.src = Snow.snowSrc;
 	}
 
 	fall() {
