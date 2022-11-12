@@ -5,14 +5,19 @@ import styles from "./index.module.scss";
 
 const projectInfo = [
   {
-    key: "etsy",
-    name: "儿童摄影网站",
-    link: "http://43.142.178.115:9001",
+    key: "rt-ui",
+    name: "rt-ui",
+    link: "http://43.142.178.115:8001",
   },
   {
     key: "wyy",
     name: "仿网易云移动端网页",
     link: "http://43.142.178.115:8080/",
+  },
+  {
+    key: "etsy",
+    name: "儿童摄影网站",
+    link: "http://43.142.178.115:9001",
   },
   {
     key: "yk",
