@@ -5,9 +5,9 @@
 
 const routeData = [
   {
-    name: "文章",
+    name: "学习记录",
     key: "article",
-    link: "...",
+    link: "https://github.com/qiushilong/learning",
   },
 ] as const;
 

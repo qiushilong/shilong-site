@@ -82,7 +82,11 @@ const Header = () => {
           项目
         </div>
         {routeData.map((item) => (
-          <div key={item.key} className={styles.link}>
+          <div
+            key={item.key}
+            className={styles.link}
+            onClick={() => openProject(item.link)}
+          >
             {item.name}
           </div>
         ))}
