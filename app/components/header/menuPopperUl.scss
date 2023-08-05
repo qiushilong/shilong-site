@@ -1,0 +1,25 @@
+.menu-popper-ul {
+  .menu-popper-item {
+    padding: 13px 55px;
+    cursor: pointer;
+
+    &.sel {
+      color: var(--primary-color);
+      background-color: var(--bg-grey-color);
+    }
+
+    &:first-child {
+      border-top-left-radius: var(--border-radius);
+      border-top-right-radius: var(--border-radius);
+    }
+
+    &:last-child {
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}

@@ -13,12 +13,19 @@
   --bg-header-color: rgba(255, 255, 255, 0.8);
   --bg-grey-color: #f0f2f5;
   --bg-card-color: #fff;
+  --bg-popper-color: #fff;
   --font-color: #000;
   --font-grey-color: #8A919F;
 
   --z-index-bottom: 1;
   --z-index-middle: 50;
-  --z-index-top: 100;
+  --z-index-top-2: 98; // 普通最上层元素
+  --z-index-top-1: 99; // popper,tooltip,悬浮按钮
+  --z-index-top: 100; // 遮罩最高层
+
+  --transition-time-fast: .3s;
+  --transition-time-middle: .5s;
+  --transition-time-slow: .8s;
 }
 
 @media (prefers-color-scheme: dark) {

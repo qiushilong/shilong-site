@@ -1,82 +1,137 @@
 .header {
+  position: relative;
+  overflow: hidden;
+
+  .mainWrapper {
     position: relative;
-    overflow: hidden;
+    z-index: var(--z-index-top-2);
+    background: var(--bg-header-color);
+    box-shadow: var(--box-shadow);
+    height: var(--menu-height);
 
-    .mainWrapper {
-        position: relative;
-        z-index: var(--z-index-top);
-        background: var(--bg-header-color);
-        box-shadow: var(--box-shadow);
-        height: var(--menu-height);
+    .main {
+      max-width: var(--main-max-width);
+      padding: var(--main-padding);
+      width: 100vw;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-        .main {
-            max-width: var(--main-max-width);
-            padding: var(--main-padding);
-            width: 100%;
-            height: 100%;
-            margin: 0 auto;
+      .logo {
+        .logoFont {
+          font-size: 24px;
+          color: transparent;
+          background: linear-gradient(
+            to left,
+            rgba(36, 41, 38, 1),
+            rgba(114, 125, 130, 1),
+            rgba(128, 128, 128, 1)
+          );
+          // TODO: postcss 处理
+          background-clip: text;
+          -webkit-background-clip: text;
+          cursor: pointer;
+        }
+      }
+
+      .menu {
+        flex: 1;
+        overflow: hidden;
+
+        .menuUl {
+          max-width: 100%;
+          display: flex;
+          justify-content: center;
+          padding: 20px 0;
+
+          .menuItem {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            cursor: pointer;
+            position: relative;
+            transition: color var(--transition-time-fast);
+            margin: 0 75px;
 
-            .logo {
-                .logoFont {
-                    font-size: 24px;
-                    color: transparent;
-                    background: linear-gradient(to left, rgba(36, 41, 38, 1), rgba(114, 125, 130, 1), rgba(128, 128, 128, 1));
-                    // TODO: postcss 处理
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                }
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              bottom: -10px;
+              width: 0px;
+              height: 5px;
+              background-color: var(--primary-color);
+              transition: width var(--transition-time-fast);
             }
 
-            .menu {
-                flex: 1;
-
-                .menuUl {
-                    display: flex;
-                    justify-content: space-around;
-
-                    .menuItem {
-                        display: flex;
-                        align-items: center;
-                        cursor: pointer;
-
-                        &:hover {
-                            color: var(--primary-color);
-                        }
-
-                        &.menuItemSel {
-                            color: var(--primary-color);
-                            position: relative;
-
-                            &::after {
-                                content: '';
-                                display: block;
-                                position: absolute;
-                                bottom: -10px;
-
-                                width: 100%;
-                                height: 5px;
-                                background-color: var(--primary-color);
-                            }
-                        }
-                    }
-
-                }
+            &:hover {
+              color: var(--primary-color);
             }
+
+            &.menuItemSel {
+              color: var(--primary-color);
+
+              &::after {
+                width: 100%;
+              }
+            }
+          }
         }
 
+        .menuMore {
+          position: relative;
+          margin: 0 75px;
+
+          .menuMoreDot {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .theme {
+        height: var(--menu-height);
+        overflow: hidden;
+
+        .themeContent {
+          height: calc(2 * var(--menu-height));
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          transition: all var(--transition-time-fast);
+
+          &.sun {
+            transform: translateY(0px);
+          }
+
+          &.moon {
+            transform: translateY(calc(0px - var(--menu-height)));
+          }
+
+          .themeIcon {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            min-height: var(--menu-height);
+            cursor: pointer;
+          }
+        }
+      }
     }
+  }
 
-
-    .banner {
-        position: absolute;
-        top: 0;
-        z-index: var(--z-index-bottom);
-        width: 100%;
-        height: var(--banner-height);
-        background: conic-gradient(from 90deg at 50% 50%, rgba(255, 235, 59, 100) 13.84%, rgba(165, 214, 63, 1) 43.33%, rgba(67, 207, 124, 87.56) 67.48%, rgba(0, 186, 173, 1) 100%);
-    }
-
+  .banner {
+    position: absolute;
+    top: 0;
+    z-index: var(--z-index-bottom);
+    width: 100%;
+    height: var(--banner-height);
+    background: conic-gradient(
+      from 90deg at 50% 50%,
+      rgba(255, 235, 59, 100) 13.84%,
+      rgba(165, 214, 63, 1) 43.33%,
+      rgba(67, 207, 124, 87.56) 67.48%,
+      rgba(0, 186, 173, 1) 100%
+    );
+  }
 }

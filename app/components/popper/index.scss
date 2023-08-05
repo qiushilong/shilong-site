@@ -1,0 +1,9 @@
+.c-popper {
+  min-width: 10px;
+  min-height: 10px;
+  background-color: var(--bg-popper-color);
+  border-radius: var(--border-radius);
+  z-index: var(--z-index-top-1);
+  transition: opacity var(--trasition-time-fast);
+  box-shadow: var(--box-shadow);
+}
