@@ -1,1 +1,15 @@
-.main {}
+.main {
+    display: flex;
+    justify-content: center;
+
+    .card {
+        position: relative;
+        overflow: hidden;
+        z-index: var(--z-index-middle);
+        width: calc(100% - 20px);
+        max-width: var(--main-max-width);
+        background-color: var(--bg-card-color);
+        border-radius: var(--border-radius);
+        margin-top: -65px;
+    }
+}
