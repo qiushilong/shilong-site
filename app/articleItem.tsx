@@ -9,11 +9,17 @@ export interface IArticleItem {
   title: string;
   descrition: string;
   cover?: string;
-  tags?: ITag[];
+  markdownName: string;
+  tags: ITag[];
+  thumb: number;
+  unlike: number;
+  comment: number;
+  views: number;
 }
 
 function ArticleItem(props: IArticleItem) {
-  const { title, descrition, cover, tags } = props;
+  const { title, descrition, cover, tags, thumb, unlike, comment, views } =
+    props;
 
   return (
     <section className={styles.articleItem}>
@@ -28,10 +34,18 @@ function ArticleItem(props: IArticleItem) {
               ))}
             </div>
             <div className={styles.feedbacks}>
-              <Feedback type="thumb" num={100000} style={{ marginRight: 15 }} />
-              <Feedback type="unlike" num={20000} style={{ marginRight: 15 }} />
-              <Feedback type="comment" num={9999} style={{ marginRight: 15 }} />
-              <Feedback type="views" num={902} style={{ marginRight: 15 }} />
+              <Feedback type="thumb" num={thumb} style={{ marginRight: 15 }} />
+              <Feedback
+                type="unlike"
+                num={unlike}
+                style={{ marginRight: 15 }}
+              />
+              <Feedback
+                type="comment"
+                num={comment}
+                style={{ marginRight: 15 }}
+              />
+              <Feedback type="views" num={views} style={{ marginRight: 15 }} />
             </div>
           </div>
         </div>

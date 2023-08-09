@@ -1,13 +1,14 @@
-import React from 'react';
-import styles from './index.module.scss'
+import React from "react";
+import styles from "./index.module.scss";
+import { useRouter } from "next/navigation";
 
 function logo() {
-
-    return <section className={styles.logo}>
-        <div className={styles.logoFont}>
-            DDU
-        </div>
+  const router = useRouter();
+  return (
+    <section className={styles.logo} onClick={() => router.push("/")}>
+      <div className={styles.logoFont}>DDU</div>
     </section>
+  );
 }
 
-export default logo
+export default logo;

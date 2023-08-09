@@ -1,30 +1,35 @@
+import Link from "next/link";
 import styles from "./page.module.css";
 import ArticleItem, { type IArticleItem } from "./articleItem";
 
 const articleList: IArticleItem[] = [
   {
     id: 1,
-    title: "在 vue3 中，我是如何使用 icon 图标的",
-    descrition:
-      "本文介绍三种使用icon的方案，分别是element-icon、svg-icon、@iconify/vue。1. element-iconElement Plus 提供了一套常用的图标集合。",
-    cover: "1.png",
+    title: "nginx",
+    descrition: "nginx 基本使用",
+    cover: "nginx-1.png",
+    markdownName: "nginx",
     tags: [
       {
-        content: "js",
+        content: "nginx",
         type: "success",
       },
       {
-        content: "promise",
+        content: "服务器配置",
         type: "warning",
       },
     ],
+    thumb: 0,
+    unlike: 0,
+    comment: 0,
+    views: 0,
   },
   {
-    id: 2 ,
-    title: "在 vue3 中，我是如何使用 icon 图标的",
-    descrition:
-      "本文介绍三种使用icon的方案，分别是element-icon、svg-icon、@iconify/vue。1. element-iconElement Plus 提供了一套常用的图标集合。",
-    cover: "1.png",
+    id: 2,
+    title: "JavaScript 面试题",
+    descrition: "JavaScript 面试题",
+    cover: "js-1.png",
+    markdownName: "JavaScript笔试题",
     tags: [
       {
         content: "js",
@@ -35,6 +40,10 @@ const articleList: IArticleItem[] = [
         type: "warning",
       },
     ],
+    thumb: 100,
+    unlike: 0,
+    comment: 0,
+    views: 0,
   },
 ];
 
@@ -43,7 +52,9 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.card}>
         {articleList.map((article) => (
-          <ArticleItem {...article} key={article.id} />
+          <Link href={`/article/${article.markdownName}`}>
+            <ArticleItem {...article} key={article.id} />
+          </Link>
         ))}
       </div>
     </main>

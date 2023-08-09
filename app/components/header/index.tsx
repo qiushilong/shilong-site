@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import styles from "./index.module.scss";
 import Menu from "./menu";
 import Logo from "./logo";
@@ -17,6 +17,7 @@ export interface IMenuItem {
 
 function header({}: IHeaderProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const [menuSel, setMenuSel] = useState<IMenuItem | undefined>();
   const [menuList, setMenuList] = useState<IMenuItem[]>([
     {
@@ -57,6 +58,8 @@ function header({}: IHeaderProps) {
     // },
   ]);
 
+  console.log("key: router", `\nvalue: `, router);
+
   useEffect(() => {
     menuList.forEach(
       (item) => location.pathname === item.link && setMenuSel(item)
@@ -71,7 +74,6 @@ function header({}: IHeaderProps) {
     e: React.MouseEvent<HTMLLIElement, MouseEvent>,
     menuItem: IMenuItem
   ) {
-    // console.log("e", e);
     setMenuSel(menuItem);
     router.push(menuItem.link);
   }
@@ -81,7 +83,7 @@ function header({}: IHeaderProps) {
       className={styles.header}
       style={{
         height:
-          menuSel?.link === "/" ? "var(--banner-height)" : "var(--menu-height)",
+          pathname === "/" ? "var(--banner-height)" : "var(--menu-height)",
       }}
     >
       <section className={styles.mainWrapper}>
