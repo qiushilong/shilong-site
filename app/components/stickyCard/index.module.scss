@@ -1,0 +1,18 @@
+.stickyCard {
+  position: sticky;
+  top: 100px;
+  min-width: 100px;
+  max-height: 300px;
+  overflow: auto;
+  background-color: var(--bg-card-color);
+  border-radius: var(--border-radius);
+
+  .title {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}

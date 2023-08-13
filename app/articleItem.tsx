@@ -3,19 +3,7 @@ import Image from "next/image";
 import Tag, { type ITag } from "@/components/tag";
 import Feedback from "@/components/feedback";
 import styles from "./articleItem.module.scss";
-
-export interface IArticleItem {
-  id: number;
-  title: string;
-  descrition: string;
-  cover?: string;
-  markdownName: string;
-  tags: ITag[];
-  thumb: number;
-  unlike: number;
-  comment: number;
-  views: number;
-}
+import { IArticleItem } from "./data/article";
 
 function ArticleItem(props: IArticleItem) {
   const { title, descrition, cover, tags, thumb, unlike, comment, views } =

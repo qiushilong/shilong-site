@@ -58,15 +58,12 @@ function header({}: IHeaderProps) {
     // },
   ]);
 
-  console.log("key: router", `\nvalue: `, router);
-
   useEffect(() => {
     menuList.forEach(
       (item) => location.pathname === item.link && setMenuSel(item)
     );
 
     window.addEventListener("resize", (e) => {
-      console.log("e", e);
     });
   }, []);
 

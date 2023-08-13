@@ -49,8 +49,6 @@ function popper(
   );
 
   useEffect(() => {
-    // console.log("key: popperRef", `\nvalue: `, popperRef);
-    // console.log("key: popperContentRef", `\nvalue: `, popperContentRef);
     if (popperRef.current && popperContentRef.current) {
       createPopper(popperRef.current, popperContentRef.current, {
         placement: position,
@@ -62,7 +60,6 @@ function popper(
   }, []);
 
   const documentClick = (e: MouseEvent) => {
-    // console.log("key: e", `\nvalue: `, e);
     if (e.target !== popperContentRef.current) {
       setShow(false);
       document.removeEventListener("click", documentClick);
@@ -73,11 +70,9 @@ function popper(
     if (trigger === "hover") {
       return {
         onMouseOver: () => {
-          console.log("onMouseOver");
           setShow(true);
         },
         onMouseLeave: () => {
-          console.log("onMouseLeave");
           setShow(false);
         },
       };

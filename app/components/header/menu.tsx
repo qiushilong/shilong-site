@@ -46,13 +46,12 @@ function menu({ menuSel, menuList, handleItemClick, setMenuList }: IMenuProps) {
 
   const menuDisplayChange = debounce(() => {
     const ul = document.querySelector(`.${styles.menuUl}`)! as HTMLElement;
-    console.log("key: ul", `\nvalue: `, ul, ul.offsetWidth);
 
     let ulLeftWidth = ul.offsetWidth;
     const newMenuList = [...menuList];
-    newMenuList.map((menuItem) =>
-      console.log(getTextWidth(menuItem.title, 16))
-    );
+    // newMenuList.map((menuItem) =>
+    //   console.log(getTextWidth(menuItem.title, 16))
+    // );
     const allTextWidth = newMenuList.map(
       (menuItem) => getTextWidth(menuItem.title, 16) + 150
     );
